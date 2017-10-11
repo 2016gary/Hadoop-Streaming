@@ -1,5 +1,5 @@
-## 词频统计
-## 朋友推荐
+## 词频统计 WordCount
+## 朋友推荐 FoF
 ```
 hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
            -D mapreduce.job.reduces=1 \
