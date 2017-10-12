@@ -8,7 +8,12 @@ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.10.0.jar \
            -mapper mapper.py \
            -reducer reducer.py 
 ```
-## 2.朋友推荐 FoF
+
+<label>结果：</label>
+
+<img src="/WordCount/result.png"  alt="无法显示该图片" />
+
+## 2.好友推荐 FoF
 <label>关系图：</label>
 
 <img src="/FoF/fof.png"  alt="无法显示该图片" />
