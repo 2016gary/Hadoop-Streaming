@@ -1,4 +1,4 @@
-## 词频统计 WordCount
+## 1.词频统计 WordCount
 ```
 hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.10.0.jar \
            -D stream.non.zero.exit.is.failure=false \
@@ -8,7 +8,7 @@ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.10.0.jar \
            -mapper mapper.py \
            -reducer reducer.py 
 ```
-## 朋友推荐 FoF
+## 2.朋友推荐 FoF
 <label>关系图：</label>
 
 <img src="/FoF/fof.png"  alt="无法显示该图片" />
@@ -39,8 +39,8 @@ hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce
            -reducer 'python reducer.py'
 ```
 
-<label>最终结果：</label>
+<label>最终结果：Sooo 如果给我推荐好友的话，请把韩孝周女神推荐给我:-)</label>
 
 <img src="/FoF/result2.png"  alt="无法显示该图片" />
 
-## PageRank
+## 3.PageRank
