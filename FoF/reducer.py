@@ -22,4 +22,7 @@ for line in sys.stdin:
             current_count.append(count)
         current_key = key
 
+if current_count[0] > 0:
+    print('%s\t%s' % (current_key, sum(current_count)))
+
 sys.exit(0)
