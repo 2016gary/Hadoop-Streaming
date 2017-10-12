@@ -17,4 +17,11 @@ hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce
            -output /user/enmoedu/output/ \
            -mapper 'python mapper.py' \
            -reducer 'python reducer.py'
-```           
+```
+
+<label>关系图：</label>
+
+<img src="/FoF/fof.png"  alt="无法显示该图片" />
+<label>推荐结果：</label>
+
+<img src="/FoF/result.png"  alt="无法显示该图片" />
