@@ -1,12 +1,13 @@
 ## 1.词频统计 WordCount
 ```
-hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.10.0.jar \
-           -D stream.non.zero.exit.is.failure=false \
-           -files '/home/cloudera/Desktop/mapper.py,/home/cloudera/Desktop/reducer.py' \
-           -input /user/cloudera/word_count/*  \
-           -output /user/cloudera/output/ \
-           -mapper mapper.py \
-           -reducer reducer.py 
+hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
+           -D mapreduce.job.reduces=1 \
+           -files '/home/enmoedu/Desktop/mapper.py,/home/enmoedu/Desktop/reducer.py,/home/enmoedu/Desktop/combiner.py' \
+           -input /user/enmoedu/input/Shakespeare \
+           -output /user/enmoedu/output/ \
+           -mapper 'python mapper.py' \
+           -reducer 'python reducer.py' \
+           -combiner 'python combiner.py'
 ```
 
 <label>结果：</label>
