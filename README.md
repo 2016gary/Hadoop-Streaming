@@ -106,3 +106,13 @@
 	        break
 ### 运行结果：
 ![](https://i.imgur.com/IDMUeZP.png)
+
+### Hadoop Streaming：
+	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
+	           -D mapreduce.job.reduces=1 \
+	           -files '/home/enmoedu/Desktop/PageRank/mapper.py,/home/enmoedu/Desktop/PageRank/reducer.py' \
+	           -input /user/enmoedu/input/PageRank.txt \
+	           -output /user/enmoedu/output/ \
+	           -mapper 'python mapper.py' \
+	           -reducer 'python reducer.py'
+
