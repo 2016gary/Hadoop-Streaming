@@ -73,3 +73,36 @@
 
 ### 网络页面链接图：
 <img src="/3.PageRank/PageLink.png"  alt="无法显示该图片" />
+
+### Python3实现PageRank算法：
+	i = 0
+	num = 0
+	target_value = 0.001
+	damping = 0.85
+	a_arr = [1.0]
+	b_arr = [1.0]
+	c_arr = [1.0]
+	d_arr = [1.0]
+	
+	
+	def page_rank(a_arr, b_arr, c_arr, d_arr):
+	    a_arr.append((1 - damping) / 4 + damping * c_arr[i] / 2)
+	    b_arr.append((1 - damping) / 4 + damping * (a_arr[i] / 2 + c_arr[i] / 2 + d_arr[i] / 2))
+	    c_arr.append((1 - damping) / 4 + damping * (b_arr[i] + d_arr[i] / 2))
+	    d_arr.append((1 - damping) / 4 + damping * a_arr[i] / 2)
+	    return a_arr, b_arr, c_arr, d_arr
+	
+	
+	while True:
+	    i = num
+	    page_rank(a_arr, b_arr, c_arr, d_arr)
+	    num += 1
+	    value = (abs(a_arr[i] - a_arr[i - 1]) + abs(b_arr[i] - b_arr[i - 1]) + abs(c_arr[i] - c_arr[i - 1]) + abs(
+	        a_arr[i] - a_arr[i - 1])) / 4
+	    if value <= target_value:
+	        print('迭代次数：' + str(num))
+	        print('A\tB\tC\tD:')
+	        print(a_arr[i], b_arr[i], c_arr[i], d_arr[i])
+	        break
+### 运行结果：
+![](https://i.imgur.com/IDMUeZP.png)
