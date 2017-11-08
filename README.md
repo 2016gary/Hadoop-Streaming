@@ -1,10 +1,10 @@
 # Hadoop Streaming & Python3
 ## 1.词频统计 WordCount
 	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
-			   -D mapreduce.job.name="WordCount" \
-			   -D mapreduce.job.maps=2 \
+		   -D mapreduce.job.name="WordCount" \
+		   -D mapreduce.job.maps=2 \
 	           -D mapreduce.job.reduces=1 \
-			   -D mapreduce.job.priority=NORMAL \
+		   -D mapreduce.job.priority=NORMAL \
 	           -files '/home/enmoedu/Desktop/mapper.py,/home/enmoedu/Desktop/reducer.py,/home/enmoedu/Desktop/combiner.py' \
 	           -input /user/enmoedu/input/Shakespeare \
 	           -output /user/enmoedu/output/ \
@@ -24,9 +24,9 @@
 ### Job1：
 	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
 	           -D mapreduce.job.name="FoF_Job1" \
-			   -D mapreduce.job.maps=2 \
+		   -D mapreduce.job.maps=2 \
 	           -D mapreduce.job.reduces=1 \
-			   -D mapreduce.job.priority=HIGH \
+		   -D mapreduce.job.priority=HIGH \
 	           -files '/home/enmoedu/Desktop/FOF/mapper.py,/home/enmoedu/Desktop/FOF/reducer.py' \
 	           -input /user/enmoedu/input/* \
 	           -output /user/enmoedu/output/ \
@@ -39,9 +39,9 @@
 ### Job2：
 	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
 	           -D mapreduce.job.name="FoF_Job2" \
-			   -D mapreduce.job.maps=2 \
+		   -D mapreduce.job.maps=2 \
 	           -D mapreduce.job.reduces=1 \
-			   -D mapreduce.job.priority=HIGH \
+		   -D mapreduce.job.priority=HIGH \
 	           -files '/home/enmoedu/Desktop/FOF/mapper.py,/home/enmoedu/Desktop/FOF/reducer.py' \
 	           -input /user/enmoedu/output/part-00000 \
 	           -output /user/enmoedu/output2/ \
@@ -122,9 +122,9 @@
 ### Hadoop Streaming：
 	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
 	           -D mapreduce.job.name="PageRank" \
-			   -D mapreduce.job.maps=2 \
+		   -D mapreduce.job.maps=2 \
 	           -D mapreduce.job.reduces=1 \
-			   -D mapreduce.job.priority=VERY_HIGH \
+		   -D mapreduce.job.priority=VERY_HIGH \
 	           -files '/home/enmoedu/Desktop/PageRank/mapper.py,/home/enmoedu/Desktop/PageRank/reducer.py' \
 	           -input /user/enmoedu/input/PageRank.txt \
 	           -output /user/enmoedu/output/ \
