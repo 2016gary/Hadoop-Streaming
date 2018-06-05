@@ -1,3 +1,29 @@
+# Hadoop MapReduce
+### Mapreduce是一个分布式运算程序的编程框架，是用户开发“基于hadoop的数据分析应用”的核心框架。Mapreduce核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个hadoop集群上。
+
+## Why MapReduce?
+ 1.海量数据在单机上处理因为硬件资源限制，无法胜任
+ 2.而一旦将单机版程序扩展到集群来分布式运行，将极大增加程序的复杂度和开发难度
+ 3.引入mapreduce框架后，开发人员可以将绝大部分工作集中在业务逻辑的开发上，而将分布式计算中的复杂性交由框架来处理
+
+## MapReduce编程规范
+ 1.用户编写的程序分成三个部分：Mapper，Reducer，Driver(提交运行mr程序的客户端)
+ 2.Mapper的输入数据是KV对的形式（KV的类型可自定义）
+ 3.Mapper的输出数据是KV对的形式（KV的类型可自定义）
+ 4.Mapper中的业务逻辑写在map()方法中
+ 5.map()方法（Maptask进程）对每一个调用一次
+ 6.Reducer的输入数据类型对应Mapper的输出数据类型，也是KV
+ 7.Reducer的业务逻辑写在reduce()方法中
+ 8.ReduceTask进程对每一组相同k的组调用一次reduce()方法
+ 9.用户自定义的Mapper和Reducer都要继承各自的父类
+ 10.整个程序需要一个Drvier(相当于一个yarn集群的客户端)来进行提交，提交的是一个描述了各种必要信息的job对象
+
+## MapReduce结构
+### 一个完整的MapReduce程序在分布式运行时有三类实例进程：
+ 1.MRAppMaster(ApplicationMaster)：负责整个程序的过程调度及状态协调
+ 2.MapTask：负责map阶段的整个数据处理流程
+ 3.ReduceTask：负责reduce阶段的整个数据处理流程
+
 # Hadoop Streaming & Python3
 ## 1.词频统计 WordCount
 	hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar \
